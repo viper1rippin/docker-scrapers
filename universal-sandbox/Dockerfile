@@ -102,7 +102,7 @@ RUN npx playwright install-deps chromium \
     && npx playwright install chromium
 
 # Install common Python scraping libraries
-RUN pip3 install --no-cache-dir \
+RUN pip3 install --no-cache-dir --break-system-packages \
     scrapy \
     beautifulsoup4 \
     lxml \
@@ -126,7 +126,7 @@ RUN go install github.com/gocolly/colly/v2@latest
 COPY executor.py requirements.txt ./
 
 # Install Python dependencies for the executor
-RUN pip3 install --no-cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir --break-system-packages -r requirements.txt
 
 # Create temp directory for repos
 RUN mkdir -p /tmp/scrapers
