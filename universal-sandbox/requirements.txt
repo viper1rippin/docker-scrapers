@@ -1,0 +1,2 @@
+# No additional Python packages needed for the executor
+# All scraping libraries are already installed in the Dockerfile
